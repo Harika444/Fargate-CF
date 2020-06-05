@@ -106,7 +106,7 @@ Resources:
         - 'FARGATE'
       TaskRoleArn: !Ref ExecutionRole
       ExecutionRoleArn: !Ref ExecutionRole
-      Family: !Join ['', [!Ref AccountId, TaskDefinition]]
+      Family: !Join ['', [!Ref 'AWS::AccountId', TaskDefinition]]
       ContainerDefinitions:
         - Name: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 'Container']]
           Image: !Ref ImageURI
