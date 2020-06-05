@@ -106,7 +106,7 @@ Resources:
         - 'FARGATE'
       TaskRoleArn: !Ref ExecutionRole
       ExecutionRoleArn: !Ref ExecutionRole
-      UpdateReplacePolicy: Retain
+      Family: !Join ['', [!Ref ServiceName, TaskDefinition]]
       ContainerDefinitions:
         - Name: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 'Container']]
           Image: !Ref ImageURI
