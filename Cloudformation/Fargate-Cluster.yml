@@ -101,7 +101,7 @@ Resources:
     Properties: 
       Memory: 1024
       Cpu: 512
-      family: sample-fargate
+      Family: sample-fargate
       NetworkMode: awsvpc
       RequiresCompatibilities:
         - 'FARGATE'
@@ -180,7 +180,7 @@ Resources:
     Properties:
       ServiceName: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 'ECSService']]
       Cluster: !Ref Cluster
-      TaskDefinition: !Ref family
+      TaskDefinition: !Ref Family
       DesiredCount: 2
       LaunchType: FARGATE
       NetworkConfiguration: 
